@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Label?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.AdminController">
+    <children>
+        <Text fx:id="loginAdminText" layoutX="20.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator: admin" wrappingWidth="255.60986328125">
+            <font>
+                <Font name="Times New Roman" size="15.0" />
+            </font>
+        </Text>
+        <Hyperlink fx:id="logoutHyperlinkAdmin" layoutX="400.0" layoutY="8.0" onAction="#logoutHyperlinkAdminEvent" text="Wyloguj się">
+            <font>
+                <Font name="Times New Roman Bold" size="15.0" />
+            </font>
+        </Hyperlink>
+        <Hyperlink layoutX="276.0" layoutY="8.0" onAction="#changeCredentialsHyperlinkEvent" text="Ustawienia konta |">
+            <font>
+                <Font name="Times New Roman Bold" size="15.0" />
+            </font>
+        </Hyperlink>
+      <Button fx:id="filmAddButton" layoutX="200.0" layoutY="253.0" mnemonicParsing="false" onAction="#addNewFilmEvent" text="Dodaj nowy film" />
+      <VBox layoutX="20.0" layoutY="40.0" prefHeight="200.0" prefWidth="460.0">
+         <children>
+            <TableView fx:id="movieTable" prefHeight="200.0" prefWidth="200.0">
+                <placeholder>
+                    <Label text="Brak filmów w bazie" />
+                </placeholder>
+              <columns>
+                <TableColumn fx:id="movieName" prefWidth="334.0" text="Nazwa filmu" />
+                <TableColumn fx:id="moviePrice" prefWidth="125.0" text="Cena" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <TextField fx:id="filmNameField" visible="false" layoutX="125.0" layoutY="300.0" prefHeight="25.0" prefWidth="250.0" promptText="Nazwa filmu"/>
+      <TextField fx:id="filmPriceField" visible="false" layoutX="125.0" layoutY="350.0" prefHeight="25.0" prefWidth="250.0" promptText="Cena"/>
+      <Button fx:id="filmDeleteButton" disable="true" layoutX="320.0" layoutY="253.0" mnemonicParsing="false" onAction="#deleteFilmEvent" text="Usuń film" />
+      <Button fx:id="filmModifyButton" disable="true" layoutX="90.0" layoutY="253.0" mnemonicParsing="false" onAction="#modifyFilmEvent" text="Modyfikuj film" />
+    </children>
+</Pane>

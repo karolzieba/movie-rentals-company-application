@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Label?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.UserController">
+   <children>
+      <Text fx:id="loginUserText" layoutX="20.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Użytkownik: user" wrappingWidth="255.60986328125">
+         <font>
+            <Font name="Times New Roman" size="15.0" />
+         </font>
+      </Text>
+      <Hyperlink fx:id="logoutHyperlink" layoutX="895.0" layoutY="5.0" onAction="#logoutHyperlinkEvent" text="Wyloguj się">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="770.0" layoutY="5.0" onAction="#changeCredentialsHyperlinkEvent" text="Ustawienia konta |">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Hyperlink>
+      <Button fx:id="rentNewFilmButton" layoutX="90.0" layoutY="280.0" mnemonicParsing="false" onAction="#rentNewFilmButtonEvent" prefHeight="25.0" prefWidth="150.0" text="Wypożycz nowy film" />
+      <Button fx:id="returnFilmButton" disable="true" layoutX="260.0" layoutY="280.0" mnemonicParsing="false" onAction="#returnFilmButtonEvent" prefHeight="25.0" prefWidth="150.0" text="Zwróć film" />
+      <Button fx:id="payBillButton" disable="true" layoutX="675.0" layoutY="280.0" mnemonicParsing="false" onAction="#payBillButtonEvent" prefHeight="25.0" prefWidth="150.0" text="Opłać rachunek" />
+      <VBox layoutX="20.0" layoutY="65.0" prefHeight="200.0" prefWidth="460.0">
+         <children>
+            <TableView fx:id="rentalsTable" prefHeight="200.0" prefWidth="460.0">
+               <placeholder>
+                  <Label text="Brak wypożyczeń" />
+               </placeholder>
+               <columns>
+                  <TableColumn fx:id="rentalMovieName" prefWidth="200.0" text="Tytuł filmu" />
+                  <TableColumn fx:id="rentalDate" prefWidth="130.0" text="Data wypożyczenia" />
+                  <TableColumn fx:id="rentalReturnDate" prefWidth="130.0" text="Termin zwrotu" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="520.0" layoutY="65.0" prefHeight="200.0" prefWidth="460.0">
+         <children>
+            <TableView fx:id="billsTable" prefHeight="200.0" prefWidth="460.0">
+               <placeholder>
+                  <Label text="Brak rachunków" />
+               </placeholder>
+               <columns>
+                  <TableColumn fx:id="billsMovieName" prefWidth="200.0" text="Tytuł filmu" />
+                  <TableColumn fx:id="billsReturnDate" prefWidth="100.0" text="Termin zwrotu" />
+                  <TableColumn fx:id="billsReturnDate2" prefWidth="100.0" text="Data zwrócenia" />
+                  <TableColumn fx:id="billsFee" prefWidth="60.0" text="Opłata" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <Text layoutX="200.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczenia" wrappingWidth="100.60986328125">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="670.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rachunki za zwrócone filmy" wrappingWidth="185.60986328125">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="movieTextField" visible="false" layoutX="375.0" layoutY="335.0" prefHeight="25.0" prefWidth="250.0" promptText="Nazwa filmu" />
+      <Button fx:id="movieYesButton" visible="false" layoutX="450.0" layoutY="370.0" mnemonicParsing="false" onAction="#movieYesButtonEvent" prefHeight="25.0" prefWidth="40.0" text="Tak"/>
+      <Button fx:id="movieNoButton" visible="false" layoutX="510.0" layoutY="370.0" mnemonicParsing="false" onAction="#movieNoButtonEvent" prefHeight="25.0" prefWidth="40.0" text="Nie" />
+   </children>
+</Pane>
